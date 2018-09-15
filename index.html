@@ -7,6 +7,7 @@
         <link rel = "stylesheet" type = "text/css" href = "vendors/css/ionicons.min.css">
         <link rel = "stylesheet" type = "text/css" href = "resources/css/style.css">
         <link href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400" rel="stylesheet" type = "text/css">
+        <link rel="stylesheet" type="text/css" href="resources/css/queries.css">
         <title></title>
         <style type="text/css">
             /*------------------FOOTER----------------*/
@@ -362,13 +363,13 @@
                 <h2>We're happy to hear from you</h2>
             </div>
             <div class="row">
-                <form method="POST" action="#" class="contact-form">
+                <form method="POST" action="#" class="contact-form" name="form_1">
                     <div class="row">
                         <div class="col span-1-of-3">
                             <label for="name">Name</label>
                         </div>
                         <div class="col span-2-of-3">
-                            <input type="text" name="name" id="name" placeholder="Your name" required>
+                            <input type="text" name="name" id="name" placeholder="Your name" >
                         </div>
                     </div>
                     <div class="row">
@@ -376,7 +377,7 @@
                             <label for="email">Email</label>
                         </div>
                         <div class="col span-2-of-3">
-                            <input type="email" name="email" id="email" placeholder="Your email" required>
+                            <input type="email" name="email" id="email" placeholder="Your email" >
                         </div>
                     </div>
                     <div class="row">
@@ -397,7 +398,7 @@
                             <label>Newsletter</label>
                         </div>
                         <div class="col span-2-of-3">
-                            <input type="checkbox" name="news" id="news" checked>Yes, please
+                            <input type="checkbox" name="news" id="news">Yes, please
                         </div>
                     </div>
                      <div class="row">
@@ -413,11 +414,23 @@
                             <label>&nbsp;</label>
                         </div>
                         <div class="col span-2-of-3">
-                           <input type="submit" value="Submit it!">
+                           <input type="submit" value="Submit it!" Onclick="validator()">
                         </div>
                     </div>
                 </form>
             </div>
+            <script type="text/javascript">
+                function validator(){
+                    var x = document.getElementById("name").value;
+                    var y = document.getElementById("email").value;
+                    if(!(x&&y)){
+                        window.alert("please fill in your name and email address.")
+                    }
+                    if((!document.form_1.news.checked)){
+                        window.alert("please check in the box.");
+                    }
+                }
+            </script>
         </section>
         <footer>
             <div class="row">
